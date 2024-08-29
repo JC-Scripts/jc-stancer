@@ -3,7 +3,7 @@ local particles = {}
 
 function IsVehicleNitroPurgeEnabled(vehicle)
   return vehicles[vehicle] == true
-end
+end 
 
 function CreateVehiclePurgeSpray(vehicle, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale)
   UseParticleFxAssetNextCall('core')
