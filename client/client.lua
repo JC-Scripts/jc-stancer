@@ -5,23 +5,6 @@ local camberRear = 0.000000
 local stancing = false
 local lastVehicle
 
-
-RegisterCommand('handling', function(source, args)
-    local handling = args[1]
-    local playerId = PlayerPedId()
-    local playerVehicle = GetVehiclePedIsIn(playerId, false)
-    local currentHandling = GetVehicleHandlingFloat(playerVehicle, 'CHandlingData', handling)
-    print(currentHandling)
-end)
-
-RegisterCommand('audio', function (source, args)
-    local audio = args[1]
-    local playerId = PlayerPedId()
-    local playerVehicle = GetVehiclePedIsIn(playerId, false)
-    ForceVehicleEngineAudio(playerVehicle, audio)
-end)
-
-
 -- Need to have Camber subhandlings in handling.meta 
 
 RegisterCommand('+stance', function (source)
