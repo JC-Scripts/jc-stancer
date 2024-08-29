@@ -6,7 +6,7 @@ Stancing a vehicle on the move. Not a problem with this simple stancer.
 Prequisites
 ------------------------
 
-The car you want to use this stancers needs  to have these 2 values (fCamberFront and fCamberRear) in handling.meta inside SubhandlingData
+The car you want to use this stancer need to have these 2 values (fCamberFront and fCamberRear) in handling.meta inside SubhandlingData
 ```
 <SubHandlingData>
     <Item type="CCarHandlingData">  
