@@ -1,17 +1,43 @@
 local isStanced = false 
-local height = 0.00000
 local camberFront = 0.000000
 local camberRear = 0.000000
 local stancing = false
-local lastVehicle
+local whitlistedVehicle = false
+local lastVehicle = nil
+local heightModifier = 0
 
 -- Need to have Camber subhandlings in handling.meta 
 
 RegisterCommand('+stance', function (source)
 
-    local playerId      = PlayerPedId()
-    local playerVehicle = GetVehiclePedIsIn(playerId, false)
+    local playerId         = PlayerPedId()
+    local playerVehicle    = GetVehiclePedIsIn(playerId, false)
+    local suspensionHeight = GetVehicleSuspensionHeight(playerVehicle)
 
+    -- Reset command when new vehicle is selected
+    if lastVehicle ~= playerVehicle and isStanced == true then
+        isStanced = false
+        suspensionHeight = GetVehicleSuspensionHeight(playerVehicle)
+        camberFront = 0.000000
+        camberRear = 0.000000
+    end
+
+    if lastVehicle ~= playerVehicle then
+        whitlistedVehicle = false
+    end
+
+    for _, vehicle in pairs(config.stancableCars) do
+        if string.lower(vehicle) == string.lower(GetDisplayNameFromVehicleModel(GetEntityModel(playerVehicle))) then
+            whitlistedVehicle = true
+            break
+        end
+    end
+
+    if not whitlistedVehicle then
+        print("This car does not support stancing. Create Handling.meta values fCamberFront, fCamberRear under <SubHandlingData> and try again")
+        return
+    end
+    -- Prevent using command when in middle of stancing
     if stancing then
         return
     end
@@ -20,11 +46,13 @@ RegisterCommand('+stance', function (source)
         return
     end 
 
-    if lastVehicle ~= playerVehicle and isStanced == true then
-        isStanced = false
-        height = 0.00000
-        camberFront = 0.000000
-        camberRear = 0.000000
+    -- If suspension is already lowered, lower the height decrement rate.
+    if not isStanced then
+        if suspensionHeight > 0.015 then
+            heightModifier = 0.00070
+        else
+            heightModifier = 0.00130
+        end
     end
 
     SetVehicleUseAlternateHandling(playerVehicle, true)
@@ -34,10 +62,10 @@ RegisterCommand('+stance', function (source)
         stancing = true
         for _ = 1, 80, 1 do
             Citizen.Wait(50)
-            height = height - 0.00130
+            suspensionHeight = suspensionHeight - heightModifier
             camberFront = camberFront + 0.002000
             camberRear = camberRear + 0.002000
-            SetVehicleSuspensionHeight(playerVehicle, height)
+            SetVehicleSuspensionHeight(playerVehicle, suspensionHeight)
             SetVehicleHandlingField(playerVehicle, 'CCarHandlingData', 'fCamberFront', camberFront)
             SetVehicleHandlingField(playerVehicle, 'CCarHandlingData', 'fCamberRear', camberRear)
         end
@@ -48,10 +76,10 @@ RegisterCommand('+stance', function (source)
         stancing = true
         for _ = 1, 80, 1 do
             Citizen.Wait(50)
-            height = height + 0.00130
+            suspensionHeight = suspensionHeight + heightModifier
             camberFront = camberFront - 0.002000
             camberRear = camberRear - 0.002000
-            SetVehicleSuspensionHeight(playerVehicle, height)
+            SetVehicleSuspensionHeight(playerVehicle, suspensionHeight)
             SetVehicleHandlingField(playerVehicle, 'CCarHandlingData', 'fCamberFront', camberFront)
             SetVehicleHandlingField(playerVehicle, 'CCarHandlingData', 'fCamberRear', camberRear)
         end
@@ -63,4 +91,4 @@ RegisterCommand('+stance', function (source)
 
 end)
 
-RegisterKeyMapping('+stance', 'Stance a vehicle', 'keyboard', 'k')
+RegisterKeyMapping('+stance', 'Stance a vehicle', 'keyboard', config.keybind)
