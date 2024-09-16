@@ -22,8 +22,8 @@ function SetVehicleNitroPurgeEnabled(vehicle, enabled)
     local ptfxs = {}
 
     for i=0,3 do
-      local leftPurge = CreateVehiclePurgeSpray(vehicle, off.x - 0.6, off.y + 0.05, off.z, 40.0, -20.0, 0.0, 0.5)
-      local rightPurge = CreateVehiclePurgeSpray(vehicle, off.x + 0.6, off.y + 0.05, off.z, 40.0, 20.0, 0.0, 0.5)
+      local leftPurge = CreateVehiclePurgeSpray(vehicle, off.x - 0.6, off.y + 0.05, off.z - 0.05, 40.0, -20.0, 0.0, 0.5)
+      local rightPurge = CreateVehiclePurgeSpray(vehicle, off.x + 0.6, off.y + 0.05, off.z - 0.05, 40.0, 20.0, 0.0, 0.5)
 
       table.insert(ptfxs, leftPurge)
       table.insert(ptfxs, rightPurge)
