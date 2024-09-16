@@ -1,4 +1,4 @@
-A simple stancer for FiveM
+A simple standalone car stancer for FiveM
 ===============================
 
 Prequisites
