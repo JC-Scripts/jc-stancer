@@ -8,6 +8,9 @@
 -- </SubHandlingData>
 
 
+-- TODO
+-- 1. Option to remove smokes
+
 config = {
     ['stancableCars'] = 
     {
