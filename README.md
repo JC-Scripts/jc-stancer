@@ -2,6 +2,7 @@ A simple standalone car stancer for FiveM
 ===============================
 
 ![oc-stancer](https://imgur.com/a/JPLgAv5 "oc-stancer")
+[img]https://i.imgur.com/tK6ZJoW.gif[/img]
 
 Prequisites
 ------------------------
