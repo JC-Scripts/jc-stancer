@@ -6,3 +6,7 @@ client_scripts {
     'client/client.lua',
     'client/smokes.lua',
 }
+
+shared_scripts {
+    'config.lua'
+}
