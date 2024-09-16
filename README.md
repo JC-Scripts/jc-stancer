@@ -4,7 +4,8 @@ A simple standalone car stancer for FiveM
 Prequisites
 ------------------------
 
-The car you want to use this stancer need to have these 2 values (fCamberFront and fCamberRear) in handling.meta inside SubhandlingData
+Car must have these 2 values (fCamberFront and fCamberRear) in handling.meta inside SubhandlingData
+
 ```
 <SubHandlingData>
     <Item type="CCarHandlingData">  
