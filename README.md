@@ -22,7 +22,7 @@ Installation
 
 - Download oc-stancer file and place it in your resources folder
 - Ensure oc-stancer inside your server.cfg
-- Check out config file for more configuration
+- Check out config file to add cars you want to have this feature
 
 Special Thanks 
 ===============================
