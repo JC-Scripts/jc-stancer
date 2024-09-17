@@ -21,8 +21,8 @@ Installation
 ===============================
 
 - Download oc-stancer file and place it in your resources folder
-- ensure oc-stancer inside your server.cfg
-- check out config file for more configuration
+- Ensure oc-stancer inside your server.cfg
+- Check out config file for more configuration
 
 Special Thanks 
 ===============================
