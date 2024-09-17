@@ -17,6 +17,13 @@ Car must have these 2 values (fCamberFront and fCamberRear) in handling.meta ins
 </SubHandlingData>
 ```
 
+Installation
+===============================
+
+- Download oc-stancer file and place it in your resources folder
+- ensure oc-stancer inside your server.cfg
+- check out config file for more configuration
+
 Special Thanks 
 ===============================
 
