@@ -1,10 +1,13 @@
 A simple standalone car stancer for FiveM
 ===============================
 
+![oc-stancer](https://github.com/ArChrisVa/oc-stancer/blob/master/oc-stancer.gif)
+
 Prequisites
 ------------------------
 
-The car you want to use this stancer need to have these 2 values (fCamberFront and fCamberRear) in handling.meta inside SubhandlingData
+Car must have these 2 values (fCamberFront and fCamberRear) in handling.meta inside SubhandlingData
+
 ```
 <SubHandlingData>
     <Item type="CCarHandlingData">  
@@ -13,6 +16,13 @@ The car you want to use this stancer need to have these 2 values (fCamberFront a
     </Item>
 </SubHandlingData>
 ```
+
+Installation
+===============================
+
+- Download oc-stancer file and place it in your resources folder
+- Ensure oc-stancer inside your server.cfg
+- Check out config file to add cars you want to have this feature
 
 Special Thanks 
 ===============================
