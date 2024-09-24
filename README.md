@@ -24,7 +24,7 @@ Installation
 - Ensure oc-stancer inside your server.cfg
 - Check out config file to add cars you want to have this feature
 
-Special Thanks 
+Acknowledgements
 ===============================
 
-Give a star on this https://github.com/swcfx as i used a part of the nitro script for creating smoke visual effects while stancing a car
+Smokes.lua is from ShockWave Resources. You can read more about this at https://github.com/swcfx 
