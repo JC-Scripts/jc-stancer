@@ -1,7 +1,7 @@
 A simple standalone car stancer for FiveM
 ===============================
 
-![oc-stancer](https://github.com/ArChrisVa/oc-stancer/blob/master/oc-stancer.gif)
+![jc-stancer](https://github.com/ArChrisVa/oc-stancer/blob/master/oc-stancer.gif)
 
 Prequisites
 ------------------------
@@ -20,8 +20,8 @@ Car must have these 2 values (fCamberFront and fCamberRear) in handling.meta ins
 Installation
 ===============================
 
-- Download oc-stancer file, rename it to oc-stancer and place it in your resources folder
-- Ensure oc-stancer inside your server.cfg
+- Download jc-stancer file, rename it to oc-stancer and place it in your resources folder
+- Ensure jc-stancer inside your server.cfg
 - Check out config file to add cars you want to have this feature
 
 Acknowledgements
