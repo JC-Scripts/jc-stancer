@@ -10,6 +10,7 @@
 
 -- TODO
 -- 1. Option to remove smokes
+-- 2. Add UI
 
 config = {
     ['stancableCars'] = 
