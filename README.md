@@ -20,7 +20,7 @@ Car must have these 2 values (fCamberFront and fCamberRear) in handling.meta ins
 Installation
 ===============================
 
-- Download jc-stancer file, rename it to oc-stancer and place it in your resources folder
+- Download file, rename it to jc-stancer and place it in your resources folder
 - Ensure jc-stancer inside your server.cfg
 - Check out config file to add cars you want to have this feature
 
